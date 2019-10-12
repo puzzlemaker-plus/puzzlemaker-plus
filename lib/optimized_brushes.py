@@ -4,12 +4,12 @@ import queue
 
 class Face:
     def __init__(self, name = 'tools/toolsnodraw', offset = (0, 0)):
-        self.name = name
+        self.name = name.lower()
         self.offset = offset
     def isNodraw(self):
         return self.name == 'tools/toolsnodraw'
     def isTools(self):
-        return self.name[0:5] == 'tools'
+        return self.name[0:6] == 'tools/'
     def __eq__(self, other):
         return (isinstance(other, Face) and
                 ((self.name == other.name and self.offset == other.offset) or
